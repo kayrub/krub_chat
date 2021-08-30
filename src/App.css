@@ -1,4 +1,4 @@
-/* .App {
+.App {
   text-align: center;
 }
 
@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 
-.App-header {
+.App-Chat {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -24,4 +24,4 @@
 
 .App-link {
   color: #61dafb;
-} */
+}

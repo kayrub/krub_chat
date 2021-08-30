@@ -1,15 +1,20 @@
 import './App.css';
-import React, { useState } from 'react';
+import { useState, useEffect} from 'react';
+import Chat from './Chat.js';
 
 
 function App() {
   const [chats, setChats] = useState([]);
   const [message, setMessage] = useState('');
-  // const [user, setUser] = useState();
+  const [user, setUser] = useState('');
 
-  // useEffect(() => {
-  //   getChats();
-  // });
+  useEffect(() => {
+    let newUser = prompt(`Your name, M'gamer?`)
+    while (!newUser || user === newUser) {
+      newUser = prompt(`Someone has stolen your name, try again my friend`)
+    }
+    setUser(newUser);
+  }, []);
 
   const messageHandler = (e) => {
     setMessage(e.target.value);
@@ -19,7 +24,12 @@ function App() {
     if(e.key === 'Enter') submitMessage();
   }
   const submitMessage = () => {
-    setChats(chats.concat(message));
+    const chatDetail = {
+      user: user,
+      message : message,
+      date: Date.now()
+    }
+    setChats(chats.concat(chatDetail));
     setMessage('');
   }
 
@@ -28,13 +38,14 @@ function App() {
       <header className="App-header">
       Krub Chat
       </header>
-      <div>
-        {chats.map((chat, idx) => (
-          <div key={idx}>{chat}</div>
-        ))}
+      <div className='App-Chat'>
+        <Chat 
+          chats={chats} 
+        />
+        <input type='text' placeholder='speak your mind' autoFocus onChange={messageHandler} onKeyPress={handleKeyPress} value={message}></input>
+        <button onClick={submitMessage}></button>
       </div>
-      <input type='text' placeholder='speak your mind' autoFocus onChange={messageHandler} onKeyPress={handleKeyPress} value={message}></input>
-      <button onClick={submitMessage}></button>
+
     </div>
   );
 }

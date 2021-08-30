@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Chat = ({chat}) => {
+const Chat = ({chats}) => {
   return (
     <div>
-      {chat.message}
+      {chats.map((chat, idx) => (
+          <div key={idx}>{chat.user} {chat.date} {chat.message}</div>
+      ))}
     </div>
   )
 }
