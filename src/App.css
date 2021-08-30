@@ -1,27 +1,59 @@
 .App {
-  text-align: center;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-Header {
+  display: flex;
+  flex-grow: 1;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-Chat {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  flex-grow: 2;
+  color: white;
+  height: 30%;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-chat {
-  color: white;
+.Chat-Header {
+  display: flex;
+  color: orange;
+  border: 2px solid red;
+  box-sizing:border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.Chat-User-Header {
+  display: flex;
+  border: 2px solid red;
+  box-sizing:border-box;
+  justify-content: flex-end;
 }
+
+.Chat-Spacer {
+  display: flex;
+  border: 1px solid red;
+}
+
+.Chat-Message {
+  display: flex;
+  border: 2px solid red;
+  box-sizing: border-box;
+}
+
+.Chat-User-Message {
+  display: flex;
+  border: 2px solid red;
+  box-sizing:border-box;
+  justify-content: flex-end;
+}
+
