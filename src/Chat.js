@@ -21,12 +21,12 @@ const Chat = ({chats, user}) => {
           )}
           <div className='Chat-Message-Container'>
             <div className={chatMessage}
-            onMouseEnter={() => setShowDate(true)}
+            onMouseEnter={() => setShowDate(chat.message)}
             onMouseLeave={() => setShowDate(false)}>
               {chat.message}
             </div>
             <div className={chatDate}>
-              {showDate ? chat.date : ''}
+              {showDate === chat.message ? chat.date : ''}
             </div>
           </div>
         </div>)

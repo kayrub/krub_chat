@@ -65,10 +65,18 @@ function App() {
     let sameUser;
     if (!chats.length) sameUser = false;
     else { chats[chats.length - 1].user === user ? sameUser = true : sameUser = false }
+    const date = new Date(Date.now());
+    const convertedDate = 
+          ""+(date.getMonth()+1)+
+          "/"+date.getDate()+
+          "/"+date.getFullYear()+
+          " "+date.getHours()+
+          ":"+date.getMinutes()+
+          ":"+date.getSeconds();
     const chatDetail = {
       user: user,
       message : message,
-      date: Date.now(),
+      date: convertedDate,
       same: sameUser
     }
     setChats(chats.concat(chatDetail));
@@ -89,7 +97,7 @@ function App() {
           />
           <div className="App-Input-Container">
             <input className='App-Input' type='text' placeholder='speak your mind' autoFocus onChange={messageHandler} onKeyPress={handleKeyPress} value={message}></input>
-            <button className='App-Button' onClick={submitMessage}></button>
+            <button className='App-Button' onClick={submitMessage}>S E N D</button>
           </div>
         </div>
       </div>

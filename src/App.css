@@ -68,6 +68,11 @@
   width: 20%;
   background: #9fa6ad;
   border-bottom-right-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
   box-sizing: border-box;
   border: 1px solid  #9fa6ad;
 }
