@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Chat = ({chats, user}) => {
+  const [showDate, setShowDate] = useState('');
   let chatHeader = 'Chat-Header';
   let chatMessage = 'Chat-Message';
-
+  let chatDate = 'Chat-Date';
+  
   return (
     <div className='Chat-Chat'> 
       {chats.map((chat, idx) => {
@@ -17,7 +19,16 @@ const Chat = ({chats, user}) => {
           ) : ( 
             <span className='Chat-Spacer'></span>
           )}
-          <span className={chatMessage}>{chat.message}</span>
+          <div className='Chat-Message-Container'>
+            <div className={chatMessage}
+            onMouseEnter={() => setShowDate(true)}
+            onMouseLeave={() => setShowDate(false)}>
+              {chat.message}
+            </div>
+            <div className={chatDate}>
+              {showDate ? chat.date : ''}
+            </div>
+          </div>
         </div>)
       })}
     </div>

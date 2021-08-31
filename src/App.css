@@ -79,7 +79,7 @@
   color: white;
   /* height: 30%; */
   justify-content: flex-end;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
   overflow-x: auto;
   /* border: 2px solid purple; */
   box-sizing:border-box;
@@ -110,10 +110,13 @@
   /* border: 1px solid red; */
 }
 
+.Chat-Message-Container {
+  display: flex;
+}
 .Chat-Message {
   display: flex;
   box-sizing: border-box;
-  margin-right: 30%;
+  width: 70%;
   margin-left: 10px;
   border-radius: 15px;
   border: 2px solid #595959;
@@ -122,11 +125,19 @@
   margin-top: 2.5px;
 }
 
+.Chat-Date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
 .Chat-User-Message {
+  order: 2;
   display: flex;
   box-sizing:border-box;
   justify-content: flex-end;
-  margin-left: 30%;
+  width: 70%;
   margin-right: 10px;
   word-break: break-word;
   border-radius: 15px;
@@ -134,5 +145,13 @@
   background: #797979;
   padding: 10px;
   margin-top: 2.5px;
+}
+
+.Chat-User-Date {
+  order: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
 }
 
