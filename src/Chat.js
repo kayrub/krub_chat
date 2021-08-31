@@ -5,7 +5,7 @@ const Chat = ({chats, user}) => {
   let chatMessage = 'Chat-Message';
 
   return (
-    <div className='Chat-Chat'>
+    <div className='Chat-Chat'> 
       {chats.map((chat, idx) => {
         if (chat.user === user) {
           chatHeader = 'Chat-User-Header';

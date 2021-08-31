@@ -78,18 +78,21 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-Header">
-      Krub Chat
-      </header>
-      <div className='App-Chat'>
-        <Chat 
-          chats={chats} 
-          user={user}
-        />
-        <input type='text' placeholder='speak your mind' autoFocus onChange={messageHandler} onKeyPress={handleKeyPress} value={message}></input>
-        <button onClick={submitMessage}></button>
+      <div className="App-Chat-Container">
+        <header className="App-Chat-Header">
+        krub chat
+        </header>
+        <div className='App-Chat'>
+          <Chat 
+            chats={chats} 
+            user={user}
+          />
+          <div className="App-Input-Container">
+            <input className='App-Input' type='text' placeholder='speak your mind' autoFocus onChange={messageHandler} onKeyPress={handleKeyPress} value={message}></input>
+            <button className='App-Button' onClick={submitMessage}></button>
+          </div>
+        </div>
       </div>
-
     </div>
   );
 }
